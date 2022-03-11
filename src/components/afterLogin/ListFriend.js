@@ -12,15 +12,6 @@ let list = [{
 }, {
     "id": 4,
     "name": "Christopher C"
-}, {
-    "id": 5,
-    "name": "Aiony Haust"
-}, {
-    "id": 6,
-    "name": "Lesly Juarez"
-}, {
-    "id" : 7,
-    "name": "Joseph D."
 }];
 
 function MakeFriendList(){

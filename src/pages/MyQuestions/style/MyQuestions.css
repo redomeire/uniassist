@@ -1,0 +1,7 @@
+.list-question {
+    height: 45%;
+}
+
+.list-question::-webkit-scrollbar {
+    display: none;
+}
