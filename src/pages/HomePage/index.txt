@@ -1,0 +1,13 @@
+progress hari jumat : 
+sudah membuat (+) :
+    - landing page
+    - home page
+    - fitur login
+    - fitur register
+    - post question
+    - search result
+    - read question
+
+yang belum (-) :
+    - answer question
+    - hapus my question
