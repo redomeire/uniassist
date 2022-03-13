@@ -1,15 +1,13 @@
 import HomeNav from "../HomePage/components/HomeNav";
+import SearchList from "../SearchQuestion/components/SearchList";
 import Sidebar from "../HomePage/components/Sidebar";
-import ButtonPost from "../PostQuestion/components/ButtonPost";
-import ButtonAnswer from "../PostQuestion/components/ButtonAnswer";
-import "../../global/GlobalStyle.css";
-import "./style/SearchQuestion.css";
-import SearchList from "./components/SearchList";
+import { useContext } from "react";
+import { SearchInputResult } from "../HomePage/components/SearchInput";
 
-function SearchQuestion(){
-    
+function SearchResult(){
 
-
+    const searchResult = useContext(SearchInputResult);
+    console.log(searchResult);
     return(
         <div>
       <HomeNav />
@@ -72,7 +70,7 @@ function SearchQuestion(){
                 <option href="#">Javascript</option>
               </select>
           <div className="search-question height-500 overflow-scroll shadow-lg">
-          <SearchList/>
+          
           </div>
         </div>
         <Sidebar/>
@@ -81,4 +79,4 @@ function SearchQuestion(){
     );
 }
 
-export default SearchQuestion;
+export default SearchResult;

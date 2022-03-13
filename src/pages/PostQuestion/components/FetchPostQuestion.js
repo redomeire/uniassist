@@ -1,9 +1,12 @@
+let userInfo = localStorage.getItem("Authorization");
+
 function FetchPostQuestion(item){
-    fetch("https://reqres.in/api/users", {
+    fetch("https://4700-140-0-18-112.ngrok.io/postAuth", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Authorization": JSON.parse(userInfo),
         },
         body: JSON.stringify(item)
     })

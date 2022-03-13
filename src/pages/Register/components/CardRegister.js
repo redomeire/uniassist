@@ -14,9 +14,13 @@ function CardRegister() {
   const [confirmPassword, setConfirmpassword] = useState();
 
   function RegisterFunction(){
-  let item = { username, email, password, confirmPassword };
+    let item;
 
-  let result = fetch("https://reqres.in/api/register", {
+  if(confirmPassword === password){
+    item = { username, email, password };
+  }
+
+  let result = fetch("https://4700-140-0-18-112.ngrok.io/registerAuth", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

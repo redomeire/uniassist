@@ -7,20 +7,19 @@ import { Navigate } from "react-router";
 // import {LoginFunction} from "../../../data/LoginFunction";
 
 function CardLogin() {
-  // {
-  //   /*62288f0f20d7630b29f7f752 for app token*/
-  // }
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState();
 
+  {/*user1 pass1 user1@gmail.com */}
+
   const navigate = useNavigate();
 
 function LoginFunction() {
   let item = { username, email, password };
-  let result = fetch("https://reqres.in/api/login", {
+  let result = fetch("https://4700-140-0-18-112.ngrok.io/loginAuth", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,8 +31,9 @@ function LoginFunction() {
     .then(res => {
       console.log(res);
       alert("login berhasil");
-
-      localStorage.setItem("user-info", JSON.stringify(res));
+      if(res.status !== "ERROR"){
+        localStorage.setItem("Authorization", JSON.stringify(res.token));
+      }
       navigate("/homepage");
       window.location.reload();
     })
@@ -46,8 +46,8 @@ function LoginFunction() {
 }
 
 useEffect(() => {
-  if (localStorage.getItem("user-info")) {
-    const foundUser = JSON.parse(localStorage.getItem("user-info"));
+  if (localStorage.getItem("Authorization")) {
+    const foundUser = JSON.parse(localStorage.getItem("Authorization"));
     setUser(foundUser);
     navigate("/homepage");
   }

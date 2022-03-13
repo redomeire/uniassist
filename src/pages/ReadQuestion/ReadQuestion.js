@@ -1,12 +1,24 @@
 import HomeNav from "../HomePage/components/HomeNav";
 import Sidebar from "../HomePage/components/Sidebar";
 import {Card} from "react-bootstrap";
-import { list } from "../HomePage/components/ListTopQuestion";
-import FeedbackButton from "./components/FeedbackButton";
+// import { list } from "../HomePage/components/ListTopQuestion";
 
 import "../../global/GlobalStyle.css";
 
 function ReadQuestion(){
+    let list = [{
+        title: "adi",
+        category: 1,
+        content: "test"
+    }, {
+        title: "adi",
+        category: 12,
+        content: "test"
+    }, {
+        title: "adi",
+        category: 13,
+        content: "test"
+    }];
     const URL = window.location.href;
     const lastURLcharacter = URL.charAt(URL.length - 1);
     const index = list.findIndex(x => x.id === parseInt(lastURLcharacter));
