@@ -29,12 +29,6 @@ function SearchInput(){
     });
   }
 
-  useEffect(() => {
-    
-  }, [])
-
- 
-
     return(
             <Form className="d-flex w-50 mx-auto">
             <FormControl

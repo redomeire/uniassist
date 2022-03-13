@@ -31,7 +31,6 @@ function CardRegister() {
     .then(res => res.json())
     .then(res => {
         console.log(res);
-        alert("Register berhasil")
 
         localStorage.setItem("user-register-info", JSON.stringify(res));
         navigate("/");
@@ -39,7 +38,6 @@ function CardRegister() {
     })
     .catch((error) => {
         console.log(error);
-        alert("register gagal")
     })
   }
 

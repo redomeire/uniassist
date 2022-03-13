@@ -30,7 +30,6 @@ function LoginFunction() {
     .then(res => res.json())
     .then(res => {
       console.log(res);
-      alert("login berhasil");
       if(res.status !== "ERROR"){
         localStorage.setItem("Authorization", JSON.stringify(res.token));
       }
@@ -39,7 +38,6 @@ function LoginFunction() {
     })
     .catch((error) => {
       console.log(error);
-      alert("login gagal")
     })
   // const navigate = useNavigate();
   
