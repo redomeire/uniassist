@@ -70,6 +70,9 @@ function AnswerQuestion() {
     .catch((error) => {
         console.log(error);
     })
+    setInterval(() => {
+      window.location.reload();
+    }, 1500)
 }
 
   return (
@@ -118,13 +121,13 @@ function AnswerQuestion() {
                    style={{height: "100px"}}
                  />
                </Form.Group>
-              <Button onClick={() => {
+              <Button onClick={(e) => {
+                  e.preventDefault();
                   giveFeedback();
-                  window.location.reload();
               }} className="button-primary btn text-white">Submit</Button>
               </>
             ) : (
-              <Button className="btn btn-danger text-white d-none">Logiin first</Button>
+              <Button className="btn btn-danger text-white d-none">Login first</Button>
             )}
 
             {/* <FeedbackButton/> */}

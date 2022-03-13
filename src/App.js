@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
         <Routes>
-            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/" element={<LandingPage/>}/> { /*done*/}
             <Route path="/login" element={<Login/>}/> {/* kurang private route */}
             <Route path="/register" element={<Register/>}/> {/* kurang restricted route */}
             <Route exact path="/homepage" element={<HomePage/>}/> {/* done */}
