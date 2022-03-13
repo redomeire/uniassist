@@ -10,7 +10,7 @@ function SearchInput(){
 
   const [userInput, setUserInput] = useState("");
   const [searchResultData, setSearchResultData] = useState([]);
-  function blabla(){
+  function getSearchValue(){
     fetch(`https://4700-140-0-18-112.ngrok.io/search?q=${userInput}`, {
         method: "GET",
         mode: "cors",
@@ -26,15 +26,8 @@ function SearchInput(){
       navigate("/homepage/answerquestion/searchresult")
       setSearchResultData(res.Post);
       console.log("Ini hasil search : " + res.Post);
-      SearchInputResult = createContext(searchResultData);
     });
   }
-
-  useEffect(() => {
-    
-  }, [])
-
- 
 
     return(
             <Form className="d-flex w-50 mx-auto">
@@ -46,7 +39,7 @@ function SearchInput(){
               aria-label="Search"
               onChange={(e) => setUserInput(e.target.value)}
             />
-            <Button onClick={blabla} className="border-0 bg-white d-flex justify-content-center align-items-center" type="submit" style={{borderRadius: "0 50rem 50rem 0"}}>
+            <Button onClick={getSearchValue} className="border-0 bg-white d-flex justify-content-center align-items-center" type="submit" style={{borderRadius: "0 50rem 50rem 0"}}>
               <img src={SearchButton} alt="search" width="20"/>
             </Button>
           </Form>
